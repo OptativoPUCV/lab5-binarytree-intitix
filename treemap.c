@@ -117,10 +117,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       }
   }
   else { //2 HIJOS
-    TreeNode * min = minimum(node->right);
-    node->pair->key = min->pair->key;
-    node->pair->value = min->pair->value;
-    removeNode(tree, min);
+    TreeNode * successor = minimum(right);
+    node->pair = successor->pair;
+    removeNode(tree, successor);
     
   }
   
