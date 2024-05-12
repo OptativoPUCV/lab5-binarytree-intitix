@@ -137,3 +137,9 @@ treemap.c:162:14: error: variable ‘auxNode’ set but not used [-Werror=unused
 cc1: all warnings being treated as errors
 Compilation failed
 40e02f2
+Sun 12 May 2024 02:15:40 AM UTC: 
+ treemap.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+ tests:  20|2
+total_score: 45/70
+e2f8880
