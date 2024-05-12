@@ -91,13 +91,29 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   TreeNode * parent = node->parent;
   TreeNode * left = node->left;
   TreeNode * right = node->right;
-  if (left == NULL && right == NULL) {
+  if (left == NULL && right == NULL) { // SIN HIJOS
     if (parent == NULL) tree->root = NULL;
     else {
       if (parent->left == node) parent->left = NULL;
       else parent->right = NULL;
     }
     
+  }
+  else if (left == NULL) { //1 HIJO DERECHO
+    if (parent == NULL) tree->root = right;
+    else {
+      if (parent->left == node) parent->left = right; 
+      else parent->right = right;
+      right->parent = parent;
+    }
+    
+  }
+  else if (right == NULL) { //1 HIJO IZQUIERDO
+     if (parent == NULL) tree->root = left;
+      else {
+        if (parent->right == node) parent->right = left; 
+        else parent->left = left;
+        left->parent = parent;
   }
   
   
